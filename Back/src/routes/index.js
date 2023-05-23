@@ -5,6 +5,6 @@ const router = Router()
 router.get('/', getAllProducts)
 router.get('/:id', getProductById)
 router.post('/', postProduct)
-router.put('/:id', updateProduct)
+router.put('/', updateProduct)
 
 module.exports = router

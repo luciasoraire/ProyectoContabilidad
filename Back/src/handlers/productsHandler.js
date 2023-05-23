@@ -35,9 +35,8 @@ const postProduct = async (req, res) => {
 // Actualizar un producto (stock)
 const updateProduct = async (req, res) => {
     try {
-        const { id } = req.params
-        const { cantidad } = req.body
-        const updatedProduct = await putProduct(id, cantidad)
+        const { compras } = req.body
+        const updatedProduct = await putProduct(compras)
         res.status(200).json(updatedProduct)
     } catch (error) {
         res.status(400).json({ error: error.message })

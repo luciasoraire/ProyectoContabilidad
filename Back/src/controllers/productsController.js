@@ -10,24 +10,31 @@ const postNewProduct = async (name, image, stock) => {
     return newProduct
 }
 
-const getProducts = async() => {
+const getProducts = async () => {
     const products = await Product.findAll()
     return products
 }
 
-const getProduct = async(id) => {
+const getProduct = async (id) => {
     const product = await Product.findByPk(id)
     return product
 }
 
-const putProduct = async(id, cantidad) => {
-    const product = await Product.findByPk(id)
-    product.stock = product.stock - cantidad < 0 ? 0 : product.stock -= cantidad 
-    
-    const updatedProduct = await Product.update({stock: product.stock}, {
-        where: {id}
-    })
-    return updatedProduct
+const putProduct = async (compras) => {
+    console.log(compras);
+    for (const compra of compras) {
+        console.log(compra);
+        const product = await Product.findByPk(compra.id)
+        console.log(product.stock);
+        product.stock = product.stock - compra.cantidad < 0 ? 0 : product.stock -= compra.cantidad
+        console.log(product.stock);
+
+        const updatedProduct = await Product.update({ stock: product.stock }, {
+            where: { id: compra.id }
+        })
+
+        console.log(updatedProduct);
+    }
 }
 
 module.exports = {
