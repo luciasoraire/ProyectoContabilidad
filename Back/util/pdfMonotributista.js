@@ -271,7 +271,7 @@ const monotributista = async (req, res, productosParaPDF) => {
     }
 
     // Establecer el encabezado de respuesta para abrir el PDF en el navegador
-    res.setHeader('Content-Disposition', 'inline; filename=factura.pdf');
+    res.setHeader('Content-Disposition', 'attachment; filename=factura.pdf');
     res.setHeader('Content-Type', 'application/pdf');
 
     // Pipe el flujo del PDF a la respuesta

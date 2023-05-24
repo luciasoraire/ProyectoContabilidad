@@ -1,4 +1,4 @@
-const { postNewProduct, getProducts, getProduct, putProduct } = require('../controllers/productsController')
+const { postNewProduct, getProducts, getProduct, putProduct, productsOnCart } = require('../controllers/productsController')
 
 // Traer todos los productos
 const getAllProducts = async (req, res) => {
@@ -18,6 +18,16 @@ const getProductById = async (req, res) => {
         res.status(200).json(productById)
     } catch (error) {
         res.status(400).json({ error: error.message })
+    }
+}
+
+const getProductsOnCart = async(req, res) => {
+    try {
+        const { compras } = req.body
+        const carrito = await productsOnCart(compras)
+        res.status(200).json(carrito)
+    } catch (error) {
+        res.status(400).json({error: error.message})
     }
 }
 
@@ -44,6 +54,7 @@ const updateProduct = async (req, res) => {
 module.exports = {
     getAllProducts,
     postProduct,
+    getProductsOnCart,
     updateProduct,
     getProductById
 }

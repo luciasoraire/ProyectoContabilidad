@@ -1,6 +1,6 @@
 const fs = require('fs');
 const pdf = require('html-pdf');
-
+const path = require('path');
 const responsableInscripto = async (req, res, productosParaPDF) => {
 
   const arrayPrecios = productosParaPDF.map(producto => producto.cantidad * producto.precio)
@@ -148,19 +148,20 @@ const responsableInscripto = async (req, res, productosParaPDF) => {
   };
 
   // Generar el PDF
-  pdf.create(htmlContent, options).toStream((error, stream) => {
-    if (error) {
-      console.error('Error al generar el PDF:', error);
-      res.status(500).send('Error al generar el PDF');
+  pdf.create(htmlContent).toBuffer((err, buffer) => {
+    if (err) {
+      console.error('Error al generar el PDF:', err);
+      // Manejar el error
       return;
     }
 
-    // Establecer el encabezado de respuesta para abrir el PDF en el navegador
-    res.setHeader('Content-Disposition', 'inline; filename=factura.pdf');
+    const directoryPath = path.join(__dirname);
+    process.chdir(directoryPath);
+    fs.writeFileSync('factura.pdf', buffer); // Guardar el PDF en el sistema de archivos
+    process.chdir(__dirname);
+    // Enviar la respuesta con el archivo PDF
     res.setHeader('Content-Type', 'application/pdf');
-
-    // Pipe el flujo del PDF a la respuesta
-    stream.pipe(res);
+    res.sendFile('factura.pdf', { root: directoryPath });
   });
 }
 

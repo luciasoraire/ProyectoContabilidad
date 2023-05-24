@@ -5,10 +5,13 @@ const Login = () => {
 
     useEffect(() => {
         const crearLocalStorage = () => {
-            const array = [];
+            const object = {
+                factura: '',
+                compras: []
+            };
 
-            const miArrayString = JSON.stringify(array);
-        
+            const miArrayString = JSON.stringify(object);
+            
             // Almaceno el array en el localstorage
             localStorage.setItem('carrito', miArrayString);
           };

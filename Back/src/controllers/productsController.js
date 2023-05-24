@@ -23,6 +23,12 @@ const getProduct = async (id) => {
     return product
 }
 
+const productsOnCart = async(compras) => {
+    const productsIds = compras.map(compra => compra.id)
+    const products = await Product.findAll({where: {id: productsIds}})
+    return products
+}
+
 const putProduct = async (req, res) => {
     const { factura, compras } = req.body
     const productsIds = compras.map(compra => compra.id)
@@ -55,6 +61,7 @@ const putProduct = async (req, res) => {
 module.exports = {
     postNewProduct,
     getProducts,
+    productsOnCart,
     getProduct,
     putProduct
 }
