@@ -1,9 +1,12 @@
 const { Product } = require('../db')
+const { responsableInscripto } = require('../../util/pdfResponsableInscripto')
+const { monotributista } = require('../../util/pdfMonotributista')
 
-const postNewProduct = async (name, image, stock) => {
+const postNewProduct = async (name, image, precio, stock) => {
     const newProduct = await Product.create({
         name,
         image,
+        precio,
         stock,
     })
 
@@ -20,20 +23,32 @@ const getProduct = async (id) => {
     return product
 }
 
-const putProduct = async (compras) => {
-    console.log(compras);
-    for (const compra of compras) {
-        console.log(compra);
-        const product = await Product.findByPk(compra.id)
-        console.log(product.stock);
-        product.stock = product.stock - compra.cantidad < 0 ? 0 : product.stock -= compra.cantidad
-        console.log(product.stock);
+const putProduct = async (req, res) => {
+    const { factura, compras } = req.body
+    const productsIds = compras.map(compra => compra.id)
 
-        const updatedProduct = await Product.update({ stock: product.stock }, {
+    const allProducts = await Product.findAll({where: {id: productsIds}})
+    
+    const productosParaPDF = []
+    for (const compra of compras) {
+        const product = await Product.findByPk(compra.id)
+        product.stock = product.stock - compra.cantidad < 0 ? 0 : product.stock -= compra.cantidad
+
+        await Product.update({ stock: product.stock }, {
             where: { id: compra.id }
         })
-
-        console.log(updatedProduct);
+        allProducts.map(product => product.id === compra.id && productosParaPDF.push({
+            name: product.name,
+            cantidad: compra.cantidad,
+            precio: product.precio
+        }))
+    }
+    console.log(productosParaPDF);
+    try {
+       factura === 'RI' && await responsableInscripto(req, res, productosParaPDF);
+       factura === 'MO' && await monotributista(req, res, productosParaPDF)
+    } catch (error) {
+        res.status(500).send('Error al generar el PDF');
     }
 }
 

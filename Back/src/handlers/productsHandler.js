@@ -24,8 +24,8 @@ const getProductById = async (req, res) => {
 // Crear un producto
 const postProduct = async (req, res) => {
     try {
-        const { name, image, stock } = req.body
-        const newProduct = await postNewProduct(name, image, stock)
+        const { name, image, precio, stock } = req.body
+        const newProduct = await postNewProduct(name, image, precio, stock)
         res.status(200).json(newProduct)
     } catch (error) {
         res.status(400).json({ error: error.message })
@@ -35,9 +35,7 @@ const postProduct = async (req, res) => {
 // Actualizar un producto (stock)
 const updateProduct = async (req, res) => {
     try {
-        const { compras } = req.body
-        const updatedProduct = await putProduct(compras)
-        res.status(200).json(updatedProduct)
+        await putProduct(req, res)
     } catch (error) {
         res.status(400).json({ error: error.message })
     }
