@@ -5,36 +5,37 @@ import style from './Products.module.css'
 const Products = () => {
 
     const [products, setProducts] = useState([])
+    
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.get('http://localhost:3001/contabilidad')
-            console.log(response.data);
             setProducts(response.data)
         }
         fetchData()
     }, [])
 
-    const addToCart = (event) => {
-        // Recuperar el carrito almacenado en el localStorage
-        const cart = JSON.parse(localStorage.getItem('carrito')) || {};
+    const addToCart = (id, stock) => {
+        const cart = JSON.parse(localStorage.getItem('carrito'));
 
+        if (!cart.compras) return
         // Verificar si el producto ya está en el carrito
-        const existingItem = cart.compras.find(item => item.id === event.target.name);
+        const existingItem = cart.compras.find(item => item.id === id);
 
         if (existingItem) {
             // Si el producto ya está en el carrito, aumentar la cantidad
-            existingItem.cantidad += 1;
+            if (existingItem.cantidad + 1 <= stock) {
+                existingItem.cantidad += 1;
+            }
         } else {
-            // Si el producto no está en el carrito, agregarlo como un nuevo objeto
-            const newItem = { 
-                id: Number(event.target.name),
+            // Si el producto no está en el carrito, agregarlo
+            const newItem = {
+                id: Number(id),
                 cantidad: 1
-             };
+            };
             cart.compras.push(newItem);
         }
 
-        // Actualizar el carrito en el localStorage
         localStorage.setItem('carrito', JSON.stringify(cart));
     }
 
@@ -47,8 +48,8 @@ const Products = () => {
                             <h3>{product.name}</h3>
                             <img src={product.image} alt={product.name} />
                             <h4>${product.precio}</h4>
-                            <button>Comprar</button>
-                            <button name={product.id} onClick={addToCart}>Agregar al carrito</button>
+                            <h4>stock: {product.stock}</h4>
+                            <button onClick={() => addToCart(product.id, product.stock)}>Agregar al carrito</button>
                         </div>
                     )
                 })

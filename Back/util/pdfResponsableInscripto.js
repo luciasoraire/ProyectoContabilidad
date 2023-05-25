@@ -1,6 +1,7 @@
 const fs = require('fs');
 const pdf = require('html-pdf');
 const path = require('path');
+
 const responsableInscripto = async (req, res, productosParaPDF) => {
 
   const arrayPrecios = productosParaPDF.map(producto => producto.cantidad * producto.precio)
@@ -136,16 +137,6 @@ const responsableInscripto = async (req, res, productosParaPDF) => {
     </html>
   `;
 
-  // Opciones de configuración para html-pdf
-  const options = {
-    format: 'A4',
-    border: {
-      top: '1cm',
-      right: '1cm',
-      bottom: '1cm',
-      left: '1cm'
-    }
-  };
 
   // Generar el PDF
   pdf.create(htmlContent).toBuffer((err, buffer) => {

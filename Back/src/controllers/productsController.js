@@ -1,13 +1,13 @@
 const { Product } = require('../db')
 const { responsableInscripto } = require('../../util/pdfResponsableInscripto')
-const { monotributista } = require('../../util/pdfMonotributista')
+const { consumidorFinal } = require('../../util/pdfConsumidorFinal')
 
 const postNewProduct = async (name, image, precio, stock) => {
     const newProduct = await Product.create({
         name,
         image,
         precio,
-        stock,
+        stock
     })
 
     return newProduct
@@ -51,8 +51,9 @@ const putProduct = async (req, res) => {
     }
     console.log(productosParaPDF);
     try {
-       factura === 'RI' && await responsableInscripto(req, res, productosParaPDF);
-       factura === 'MO' && await monotributista(req, res, productosParaPDF)
+       factura === 'RI' && await responsableInscripto(req, res, productosParaPDF) // Responsable inscripto
+       factura === 'MO' && await responsableInscripto(req, res, productosParaPDF) // Monotributista
+       factura === 'CO' && await consumidorFinal(req, res, productosParaPDF)       // Consumidor final
     } catch (error) {
         res.status(500).send('Error al generar el PDF');
     }

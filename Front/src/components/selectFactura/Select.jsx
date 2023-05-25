@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { saveAs } from 'file-saver';
+
 const Select = () => {
     const cart = JSON.parse(localStorage.getItem('carrito'))
 
@@ -13,14 +13,10 @@ const Select = () => {
     const finCompra = async () => {
         console.log(cart);
 
-     
             const response = await axios.put('http://localhost:3001/contabilidad', cart, {responseType: 'blob'});
-
-            console.log('Respuesta de Axios:', response);
-
             const fileURL = URL.createObjectURL(response.data);
             window.open(fileURL);
-
+            localStorage.setItem('carrito', JSON.stringify({factura: '', compras: []}))
     }
 
     return (

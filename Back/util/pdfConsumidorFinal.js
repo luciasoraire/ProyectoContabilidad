@@ -1,7 +1,7 @@
 const fs = require('fs');
 const pdf = require('html-pdf');
 
-const monotributista = async (req, res, productosParaPDF) => {
+const consumidorFinal = async (req, res, productosParaPDF) => {
 
   const arrayPrecios = productosParaPDF.map(producto => producto.cantidad * producto.precio)
   const total = arrayPrecios.reduce((acum, current) => {
@@ -279,4 +279,4 @@ const monotributista = async (req, res, productosParaPDF) => {
   });
 }
 
-module.exports = { monotributista }
+module.exports = { consumidorFinal }
