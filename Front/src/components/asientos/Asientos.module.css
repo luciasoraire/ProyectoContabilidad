@@ -1,0 +1,44 @@
+.firstContainer {
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.container {
+    width: 600px;
+    border: 1px solid black;
+    display: flex;
+    height: fit-content;
+    
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fecha {
+    margin: 0;
+    width: 10%;
+}
+
+.info {
+    border: 1px solid black;
+    width: 50%;
+}
+
+.debe {
+    border: 1px solid black;
+    width: 20%;
+}
+
+.haber {
+    border: 1px solid black;
+    width: 20%;
+}
+
+.button {
+    height: 50px;
+}
