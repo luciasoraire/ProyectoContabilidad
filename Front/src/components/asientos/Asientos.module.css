@@ -16,6 +16,7 @@
 .all {
     display: flex;
     flex-direction: column;
+    border: 2px solid blue;
     gap: 5px;
 }
 
