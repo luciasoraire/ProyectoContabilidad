@@ -1,0 +1,18 @@
+.container {
+    border: 2px solid black;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+.buttons button{
+    margin-left: 5px;
+}

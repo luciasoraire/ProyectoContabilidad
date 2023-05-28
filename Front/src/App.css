@@ -1,0 +1,10 @@
+.App { 
+    padding-bottom: 0.1px;
+    min-height: 100vh;
+    min-width: 100vw;
+    text-align: center;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    
+ }

@@ -1,45 +1,189 @@
 .firstContainer {
-    border: 1px solid red;
     width: 100%;
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
+
+
 .container {
-    width: 600px;
-    border: 1px solid black;
+    width: 700px;
+   
     display: flex;
     height: fit-content;
-    
+    flex-wrap: wrap;
+}
+
+.containerModel {
+    width: 600px;
+    display: flex;
+    height: fit-content; 
+}
+
+.containerPorAsiento{
+    display: flex;
+    height: fit-content;
+    flex-wrap: wrap;
 }
 
 .all {
     display: flex;
     flex-direction: column;
-    border: 2px solid blue;
-    gap: 5px;
+    gap: 20px;
 }
 
 .fecha {
-    margin: 0;
-    width: 10%;
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    gap: 4px;
+    margin: 5px;
 }
+
+.fecha h3 {
+    margin: 0;
+}
+
 
 .info {
     border: 1px solid black;
     width: 50%;
 }
 
+.info h2 {
+    margin: 0;
+    margin-top: 8px;
+}
+
 .debe {
-    border: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
     width: 20%;
 }
 
+.debe h3 {
+    margin: 0;
+}
+
 .haber {
-    border: 1px solid black;
+    border-right: 1px solid black;
     width: 20%;
+}
+
+.haber h3 {
+    margin: 0;
 }
 
 .button {
     height: 50px;
+    margin: 15px;
+}
+
+.button:hover {
+    transition: 0.2s ease-in;
+}
+
+.debeYhaber {
+    width: 70%;
+}
+
+.numeroDeAsiento {
+    width: 100%;
+    transform:translateY(-10px);
+    display: flex;
+    justify-content: center;
+}
+
+.numero {
+    width: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.numero p {
+    margin: 0;
+}
+
+.nombre {
+    margin-top: 23px;
+    margin-left: 15px;
+}
+
+.productoDebe {
+    width: 100%;
+    padding-left: 15px;
+    padding-bottom: 2px;
+}
+
+
+.productoHaber {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column; 
+    padding-right: 15px;
+    gap: 2px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin:5px;
+    gap: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.productoHaber input {
+    margin-left: auto;
+    
+}
+
+.containerDebeYHaber {
+    width: 100%;
+}
+
+.productoHaber2 {
+    display: flex;
+    justify-content: right;
+    flex-direction: column; 
+}
+
+.productoHaber2 p{
+    margin-left: auto;
+    margin-top: 0;
+}
+
+.containerHaberP {
+
+}
+
+.containerHaberP p {
+    min-height: 22px;
+    margin-right: 15px;
+    margin-left: 15px;
+    background-color: white;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+.p {
+    margin-left: 15px;
+}
+
+.pHaber {
+    margin-right: 15px;
+}
+
+.referencia {
+    margin: 15px;
+    margin-top: 0;
+}
+
+.referencia input {
+    width: 97%;
 }

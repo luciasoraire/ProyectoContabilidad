@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Products from './components/products/Products';
 import Login from './components/login/Login';
 import NavBar from './components/navbar/NavBar';
@@ -10,10 +10,11 @@ import Asientos from './components/asientos/Asientos';
 
 function App() {
 
+  const location = useLocation()
+
   return (
     <div>
-      <BrowserRouter>
-        <NavBar />
+        {location.pathname !== "/" && <NavBar />}
         <Routes>
 
           <Route path="/" element={<Login />} />
@@ -22,7 +23,6 @@ function App() {
           <Route path="/select" element={<Select />} />
           <Route path="/asientos" element={<Asientos />} />
         </Routes>
-      </BrowserRouter>
     </div>
   );
 }
