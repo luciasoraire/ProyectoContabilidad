@@ -15,30 +15,29 @@ import { useEffect, useState } from "react"
 
 
 function App() {
-    
-    function Example() {
-        const [show, setShow] = useState(false);
-      
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
-    }
 
-    function changeImageSrc(anything){
-        document.querySelector('.anteojos').src = anything;
-      }
-    
-          const pos = document.documentElement;
-          pos.addEventListener("mousemove", (e) => {
-            pos.style.setProperty("--x", e.clientX + "px");
-            pos.style.setProperty("--y", e.clientY + "px");
-          });
-          
+  const [show, setShow] = useState(false);
 
-          
-    
-    return (
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-  
+
+  function changeImageSrc(anything) {
+    document.querySelector('.anteojos').src = anything;
+  }
+
+  const pos = document.documentElement;
+  pos.addEventListener("mousemove", (e) => {
+    pos.style.setProperty("--x", e.clientX + "px");
+    pos.style.setProperty("--y", e.clientY + "px");
+  });
+
+
+
+
+  return (
+
+
     <div>
       <header>
         <div className="row">
@@ -53,8 +52,8 @@ function App() {
           <li><a href="pages/contact.html">Contacto</a></li>
           <li className="nav-item" id="navLogin">
             <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
+              Launch demo modal
+            </Button>
           </li>
           <li className="nav-item" id="navAdmin"></li>
         </ul>
@@ -193,61 +192,61 @@ function App() {
       <hr />
       <div></div>
       <footer className="bg-white">
-      <div className="container py-5">
-        <div className="row py-4">
-          <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-            <p className="font-italic text-muted">Optique es la óptica y boutique de lentes más reconocida del país. Contamos con una gran variedad de armazones recetados y lentes de contacto. Especialista en Multifocales y altas graduaciones.</p>
-            <ul className="list-inline mt-4">
-              <li className="list-inline-item"><a href="#" target="_blank" title="github"><i className="bi bi-github"></i></a></li>
-              <li className="list-inline-item"><a href="#" target="_blank" title="facebook"><i className="bi bi-facebook"></i></a></li>
-              <li className="list-inline-item"><a href="#" target="_blank" title="instagram"><i className="bi bi-instagram"></i></a></li>
-              <li className="list-inline-item"><a href="#" target="_blank" title="ubicación"><i className="bi bi-geo-alt-fill"></i></a></li>
-              <li className="list-inline-item"><a href="#" target="_blank" title="telefono"><i className="bi bi-telephone-fill"></i></a></li>
-            </ul>
-          </div>
-          <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
-            <h6 className="text-uppercase font-weight-bold mb-4">Shop</h6>
-            <ul className="list-unstyled mb-0">
-              <li className="mb-2"><a href="#" className="text-muted">Mujeres</a></li>
-              <li className="mb-2"><a href="#" className="text-muted">Hombres</a></li>
-              <li className="mb-2"><a href="#" className="text-muted">Unisex</a></li>
-              <li className="mb-2"><a href="#" className="text-muted">Niños</a></li>
-            </ul>
-          </div>
-          <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
-            <h6 className="text-uppercase font-weight-bold mb-4">Contact</h6>
-            <ul className="list-unstyled mb-0">
-              <li className="mb-2"><a href="#" className="text-muted">e-Mail</a></li>
-              <li className="mb-2"><a href="#" className="text-muted">Whatsapp</a></li>
-              <li className="mb-2"><a href="#" className="text-muted">Facebook</a></li>
-              <li className="mb-2"><a href="#" className="text-muted">Instagram</a></li>
-            </ul>
-          </div>
-          <div className="col-lg-4 col-md-6 mb-lg-0">
-            <h6 className="text-uppercase font-weight-bold mb-4">Newsletter</h6>
-            <p className="text-muted mb-4">Bienvenido a nuestro histórico de Newsletters, aquí puedes acceder a todos los números de nuestra revista digital.
-  
-              Si te gusta estar a la última en moda, tendencias, novedades de las marcas más prestigiosas y eventos relacionados con nuestras ópticas este es tu sitio.</p>
-            <div className="p-1 rounded border">
-              <div className="input-group">
-                <input type="email" placeholder="Ingrese su dirección de correo" aria-describedby="button-addon1" className="form-control border-0 shadow-0" />
-                <div className="input-group-append">
-                  <button id="button-addon1" type="submit" className="btn btn-link"><i className="fa fa-paper-plane"></i></button>
+        <div className="container py-5">
+          <div className="row py-4">
+            <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+              <p className="font-italic text-muted">Optique es la óptica y boutique de lentes más reconocida del país. Contamos con una gran variedad de armazones recetados y lentes de contacto. Especialista en Multifocales y altas graduaciones.</p>
+              <ul className="list-inline mt-4">
+                <li className="list-inline-item"><a href="#" target="_blank" title="github"><i className="bi bi-github"></i></a></li>
+                <li className="list-inline-item"><a href="#" target="_blank" title="facebook"><i className="bi bi-facebook"></i></a></li>
+                <li className="list-inline-item"><a href="#" target="_blank" title="instagram"><i className="bi bi-instagram"></i></a></li>
+                <li className="list-inline-item"><a href="#" target="_blank" title="ubicación"><i className="bi bi-geo-alt-fill"></i></a></li>
+                <li className="list-inline-item"><a href="#" target="_blank" title="telefono"><i className="bi bi-telephone-fill"></i></a></li>
+              </ul>
+            </div>
+            <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
+              <h6 className="text-uppercase font-weight-bold mb-4">Shop</h6>
+              <ul className="list-unstyled mb-0">
+                <li className="mb-2"><a href="#" className="text-muted">Mujeres</a></li>
+                <li className="mb-2"><a href="#" className="text-muted">Hombres</a></li>
+                <li className="mb-2"><a href="#" className="text-muted">Unisex</a></li>
+                <li className="mb-2"><a href="#" className="text-muted">Niños</a></li>
+              </ul>
+            </div>
+            <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
+              <h6 className="text-uppercase font-weight-bold mb-4">Contact</h6>
+              <ul className="list-unstyled mb-0">
+                <li className="mb-2"><a href="#" className="text-muted">e-Mail</a></li>
+                <li className="mb-2"><a href="#" className="text-muted">Whatsapp</a></li>
+                <li className="mb-2"><a href="#" className="text-muted">Facebook</a></li>
+                <li className="mb-2"><a href="#" className="text-muted">Instagram</a></li>
+              </ul>
+            </div>
+            <div className="col-lg-4 col-md-6 mb-lg-0">
+              <h6 className="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+              <p className="text-muted mb-4">Bienvenido a nuestro histórico de Newsletters, aquí puedes acceder a todos los números de nuestra revista digital.
+
+                Si te gusta estar a la última en moda, tendencias, novedades de las marcas más prestigiosas y eventos relacionados con nuestras ópticas este es tu sitio.</p>
+              <div className="p-1 rounded border">
+                <div className="input-group">
+                  <input type="email" placeholder="Ingrese su dirección de correo" aria-describedby="button-addon1" className="form-control border-0 shadow-0" />
+                  <div className="input-group-append">
+                    <button id="button-addon1" type="submit" className="btn btn-link"><i className="fa fa-paper-plane"></i></button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-  
-      <div className="bg-light py-4">
-        <div className="containerf text-center">
-          <p className="text-muted mb-0 py-2">© 2022 | Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </footer>
 
-    <Modal show={show} onHide={handleClose}>
+        <div className="bg-light py-4">
+          <div className="containerf text-center">
+            <p className="text-muted mb-0 py-2">© 2022 | Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
@@ -262,7 +261,7 @@ function App() {
         </Modal.Footer>
       </Modal>
     </div>
-    
+
   );
 }
 
