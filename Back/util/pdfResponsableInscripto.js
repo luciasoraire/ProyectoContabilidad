@@ -127,13 +127,13 @@ const responsableInscripto = async (req, res, productosParaPDF, cliente) => {
           </tbody>
         </table>
         <div class="total">
-          <p class="fin"><span class="label">Total parcial:</span> - </p>
-          <p class="fin"><span class="label">Descuento:</span> - </p>
+          <p class="fin"><span class="label">Total parcial: ${total}</span></p>
+          <p class="fin"><span class="label">Descuento: </span> - </p>
           <p class="fin"><span class="label">Subtotal menos descuento:</span> - </p>
-          <p class="fin"><span class="label">IVA:</span> - </p>
+          <p class="fin"><span class="label">IVA: ${(21 / 100) * total}</span> </p>
           <p class="fin"><span class="label">Total inpuestos:</span> - </p>
           <p class="fin"><span class="label">Envio:</span> - </p>
-          <p class="fin"><span class="label">TOTAL FACTURA:</span> ${total}</p>
+          <p class="fin"><span class="label">TOTAL FACTURA:</span> ${total + ((21 / 100) * total)}</p>
         </div>
       </body>
     </html>

@@ -43,7 +43,7 @@ const Products = () => {
         <div className={style.container}>
             <div className={style.secondContainer}>
                 {
-                    products.map(product => {
+                   products.length !== 0 && products.map(product => {
                         return (
                             <div className={style.card} key={product.id}>
                                 <h3>{product.name}</h3>

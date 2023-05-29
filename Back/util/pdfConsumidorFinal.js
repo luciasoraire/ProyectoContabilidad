@@ -3,7 +3,7 @@ const pdf = require('html-pdf');
 
 const consumidorFinal = async (req, res, productosParaPDF, cliente) => {
 
-  const arrayPrecios = productosParaPDF.map(producto => producto.cantidad * producto.precio)
+  const arrayPrecios = productosParaPDF.map(producto => producto.cantidad * (producto.precio + (21 / 100) * producto.precio))
   const total = arrayPrecios.reduce((acum, current) => {
     return acum + current
   }, 0)
@@ -238,8 +238,8 @@ const consumidorFinal = async (req, res, productosParaPDF, cliente) => {
   <tr>
     <td>${producto.name}</td>
     <td>${producto.cantidad}</td>
-    <td>${producto.precio}</td>
-    <td>${producto.cantidad * producto.precio}</td>
+    <td>${producto.precio + (21 / 100) * producto.precio}</td>
+    <td>${producto.cantidad * (producto.precio + (21 / 100) * producto.precio)}</td>
   </tr>
 `)}
   </tbody>
