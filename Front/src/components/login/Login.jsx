@@ -48,9 +48,7 @@ const Login = () => {
         }
     }
 
-    useEffect(() => {
-        !access && navigate('/');
-    }, [access]);
+
 
     return (
         <div className={style.container}>

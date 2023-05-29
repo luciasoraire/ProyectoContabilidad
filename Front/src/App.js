@@ -8,6 +8,7 @@ import Carrito from './components/carrito/Carrito';
 import Select from './components/selectFactura/Select';
 import Asientos from './components/asientos/Asientos';
 import CreateProduct from './components/createProduct/CreateProduct';
+import Index from './components/index/Index';
 
 function App() {
 
@@ -15,10 +16,9 @@ function App() {
 
   return (
     <div>
-        {location.pathname !== "/" && <NavBar />}
         <Routes>
-
-          <Route path="/" element={<Login />} />
+        <Route path="/" element={<Index />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/products" element={<Products />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/select" element={<Select />} />
