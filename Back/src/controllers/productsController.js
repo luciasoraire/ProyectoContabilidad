@@ -6,8 +6,8 @@ const postNewProduct = async (name, image, precio, stock) => {
     const newProduct = await Product.create({
         name,
         image,
-        precio,
-        stock
+        precio: Number(precio),
+        stock: Number(stock)
     })
 
     return newProduct
@@ -30,7 +30,7 @@ const productsOnCart = async(compras) => {
 }
 
 const putProduct = async (req, res) => {
-    const { factura, compras } = req.body
+    const { factura, cliente, compras } = req.body
     const productsIds = compras.map(compra => compra.id)
 
     const allProducts = await Product.findAll({where: {id: productsIds}})
@@ -51,9 +51,9 @@ const putProduct = async (req, res) => {
     }
     console.log(productosParaPDF);
     try {
-       factura === 'RI' && await responsableInscripto(req, res, productosParaPDF) // Responsable inscripto
-       factura === 'MO' && await responsableInscripto(req, res, productosParaPDF) // Monotributista
-       factura === 'CO' && await consumidorFinal(req, res, productosParaPDF)       // Consumidor final
+       factura === 'RI' && await responsableInscripto(req, res, productosParaPDF, cliente) // Responsable inscripto
+       factura === 'MO' && await responsableInscripto(req, res, productosParaPDF, cliente) // Monotributista
+       factura === 'CO' && await consumidorFinal(req, res, productosParaPDF, cliente)       // Consumidor final
     } catch (error) {
         res.status(500).send('Error al generar el PDF');
     }

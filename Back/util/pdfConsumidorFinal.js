@@ -1,7 +1,7 @@
 const fs = require('fs');
 const pdf = require('html-pdf');
 
-const consumidorFinal = async (req, res, productosParaPDF) => {
+const consumidorFinal = async (req, res, productosParaPDF, cliente) => {
 
   const arrayPrecios = productosParaPDF.map(producto => producto.cantidad * producto.precio)
   const total = arrayPrecios.reduce((acum, current) => {
@@ -15,6 +15,10 @@ const consumidorFinal = async (req, res, productosParaPDF) => {
     month: 'numeric',
     year: 'numeric',
   };
+
+  const contadoChecked = cliente.pago === 'contado' ? 'checked' : '';
+  const ccChecked = cliente.pago === 'cc' ? 'checked' : '';
+  const tarjetaChecked = cliente.pago === 'tarjeta' ? 'checked' : '';
 
   const fechaFormateada = fecha.toLocaleDateString(undefined, opcionesFecha);
 
@@ -178,13 +182,13 @@ const consumidorFinal = async (req, res, productosParaPDF) => {
         <div class="box6">
           <p>CUIT: 20450593312</p>
           <p>Ing Brutos: asdadasjdas</p>
-          <p>Inic. De Actividades: fecha</p>
+          <p>Inic. De Actividades: 01/01/2023</p>
         </div>
       </div>
       <div class="cliente">
-      <p>Señor(es): nombre</p>
-      <p>Localidad: San Miguen De Tucuman</p>
-      <p>Domicilio: General Paz 120</p>
+      <p>Señor(es): ${cliente.nombre}</p>
+      <p>Localidad: ${cliente.localidad}</p>
+      <p>Domicilio: ${cliente.direccion}</p>
     </div>
     <div class="IVA">
       <div class="IVA1">IVA</div>
@@ -202,7 +206,7 @@ const consumidorFinal = async (req, res, productosParaPDF) => {
         <label for="myCheckbox">Cons. Final</label>
         <input type="checkbox" id="myCheckbox" checked/>
       </div>
-      <div class="IVA3">CUIT</div>
+      <div class="IVA3">CUIT: ${cliente.cuit}</div>
     </div>
     <div class="IVA">
     <div class="condiciones1">
@@ -210,14 +214,14 @@ const consumidorFinal = async (req, res, productosParaPDF) => {
     </div>
     <div class="condiciones2">
       <label for="myCheckbox">Contado</label>
-      <input type="checkbox" id="myCheckbox" checked />
+      <input type="checkbox" id="myCheckbox" ${contadoChecked} />
       <label for="myCheckbox">C/C</label>
-      <input type="checkbox" id="myCheckbox" />
+      <input type="checkbox" id="myCheckbox" ${ccChecked} />
       <label for="myCheckbox">Tarjeta</label>
-      <input type="checkbox" id="myCheckbox" />
+      <input type="checkbox" id="myCheckbox" ${tarjetaChecked}/>
     </div>
     <div class="condiciones3">
-      Remiro nro
+      Remito nro
     </div>
   </div>
   <table>

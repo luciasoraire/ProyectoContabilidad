@@ -1,5 +1,5 @@
 import axios from 'axios'
-import style from '../products/Products'
+import style from './Carrito.module.css'
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
@@ -21,23 +21,25 @@ const Carrito = () => {
     }, [])
 
     return (
-        <div>
-            {
-                carrito.length > 0 && carrito.map(producto => {
-                    return (
-                        <div className={style.card}>
-                            <h3>{producto.name}</h3>
-                            <img src={producto.image} alt={producto.name} />
-                            <h4>${producto.precio}</h4>
-                            {
-                                cart.compras.map(prod => prod.id == producto.id && <h4>Cantidad: {prod.cantidad}</h4>)
-                            }
-                            
-                        </div>
-                    )
-                })
-            }
-            <NavLink to='/select'><button>Tipo de factura</button></NavLink>
+        <div className={style.container}>
+            <div className={style.secondContainer}>
+                {
+                    carrito.length > 0 && carrito.map(producto => {
+                        return (
+                            <div className={style.card}>
+                                <img className={style.image} src={producto.image} alt={producto.name} />
+                                <h3>{producto.name}</h3>
+                                <h4>${producto.precio}</h4>
+                                {
+                                    cart.compras.map(prod => prod.id == producto.id && <h4>Cantidad: {prod.cantidad}</h4>)
+                                }
+
+                            </div>
+                        )
+                    })
+                }
+            </div>
+                <NavLink to='/select'><button>Tipo de factura</button></NavLink>
         </div>
     )
 }

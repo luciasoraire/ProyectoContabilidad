@@ -2,7 +2,7 @@ const fs = require('fs');
 const pdf = require('html-pdf');
 const path = require('path');
 
-const responsableInscripto = async (req, res, productosParaPDF) => {
+const responsableInscripto = async (req, res, productosParaPDF, cliente) => {
 
   const arrayPrecios = productosParaPDF.map(producto => producto.cantidad * producto.precio)
   const total = arrayPrecios.reduce((acum, current) => {
@@ -38,7 +38,6 @@ const responsableInscripto = async (req, res, productosParaPDF) => {
             padding: 15px;
             display: table-cell;
             width: 50%;
-            border: 1px solid blue;
           }
       
           .right {
@@ -47,14 +46,12 @@ const responsableInscripto = async (req, res, productosParaPDF) => {
             padding: 15px;
             vertical-align: top;
             text-align: right;
-            
-            border: 1px solid red;
+          
           }
 
           .cliente {
             width: 100%;
             height: fit-content;
-            border: 1px solid yellow;
             padding-left: 15px;
           }
           .items {
@@ -70,6 +67,7 @@ const responsableInscripto = async (req, res, productosParaPDF) => {
           .total {
             text-align: right;
             margin-top: 20px;
+            margin-right: 30px;
           }
           .factura {
             margin-left: 40%;
@@ -77,6 +75,10 @@ const responsableInscripto = async (req, res, productosParaPDF) => {
 
           .fin {
             text-decoration: underline;
+          }
+
+          thead {
+            background-color: rgb(205, 205, 205);
           }
         </style>
       </head>
@@ -98,10 +100,10 @@ const responsableInscripto = async (req, res, productosParaPDF) => {
         </div>
         <div class="cliente">
           <h3>Cliente</h3>
-          <p><span class="label">Nombre:</span> Nombre del Cliente</p>
-          <p><span class="label">CUIT:</span>20450393312</p>
-          <p><span class="label">Direccion:</span> 23 de mayo de 2023</p>
-          <p><span class="label">Condicion de pago:</span> C/C</p>
+          <p><span class="label">Nombre:</span> ${cliente.nombre}</p>
+          <p><span class="label">CUIT:</span>${cliente.cuit}</p>
+          <p><span class="label">Direccion:</span>${cliente.direccion}</p>
+          <p><span class="label">Condicion de pago:</span>${cliente.pago}</p>
           <p><span class="label">Condicion ante IVA:</span> R.I</p>
         </div>
         <table class="items">

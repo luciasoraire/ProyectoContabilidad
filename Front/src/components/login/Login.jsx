@@ -15,6 +15,7 @@ const Login = () => {
         const crearLocalStorage = () => {
             const object = {
                 factura: '',
+                cliente: {},
                 compras: []
             };
 

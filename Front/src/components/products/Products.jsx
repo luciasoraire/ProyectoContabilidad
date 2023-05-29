@@ -5,7 +5,7 @@ import style from './Products.module.css'
 const Products = () => {
 
     const [products, setProducts] = useState([])
-    
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -41,19 +41,21 @@ const Products = () => {
 
     return (
         <div className={style.container}>
-            {
-                products.map(product => {
-                    return (
-                        <div className={style.card} key={product.id}>
-                            <h3>{product.name}</h3>
-                            <img src={product.image} alt={product.name} />
-                            <h4>${product.precio}</h4>
-                            <h4>stock: {product.stock}</h4>
-                            <button onClick={() => addToCart(product.id, product.stock)}>Agregar al carrito</button>
-                        </div>
-                    )
-                })
-            }
+            <div className={style.secondContainer}>
+                {
+                    products.map(product => {
+                        return (
+                            <div className={style.card} key={product.id}>
+                                <h3>{product.name}</h3>
+                                <img src={product.image} alt={product.name} />
+                                <h4>${product.precio}</h4>
+                                <h4>stock: {product.stock}</h4>
+                                <button onClick={() => addToCart(product.id, product.stock)}>Agregar al carrito</button>
+                            </div>
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }

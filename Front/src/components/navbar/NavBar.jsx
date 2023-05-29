@@ -25,6 +25,7 @@ const NavBar = () => {
                 <NavLink to='/carrito'><button>Carrito</button></NavLink>
                 <NavLink to='/products'><button>Productos</button></NavLink>
                 {currentUser.correo === "admin@gmail.com" && <NavLink to='/asientos'><button>Asientos</button></NavLink>}
+                {currentUser.correo === "admin@gmail.com" && <NavLink to='/createProduct'><button>Crear Producto</button></NavLink>}
                 <NavLink to='/'><button onClick={cerrarSesion}>Salir</button></NavLink>
             </div>
         </div>

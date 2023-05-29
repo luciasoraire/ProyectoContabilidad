@@ -7,6 +7,7 @@ import NavBar from './components/navbar/NavBar';
 import Carrito from './components/carrito/Carrito';
 import Select from './components/selectFactura/Select';
 import Asientos from './components/asientos/Asientos';
+import CreateProduct from './components/createProduct/CreateProduct';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/select" element={<Select />} />
           <Route path="/asientos" element={<Asientos />} />
+          <Route path="/createProduct" element={<CreateProduct />}/>
         </Routes>
     </div>
   );
