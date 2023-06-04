@@ -1,0 +1,15 @@
+
+
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    margin-top: 120px;
+    
+}
+
+.crear{
+    margin-top: 20px;
+}

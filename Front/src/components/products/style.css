@@ -1,0 +1,57 @@
+.primercontenedor{
+    min-height: 40vh;
+display: flex;
+flex-wrap:wrap;
+    justify-content: center;
+    margin-top: 100px;
+    text-align: center;
+gap: 40px;
+}
+
+
+
+.factura{
+    background-color: black;
+    color: white;
+    margin-top: 50px;
+}
+
+.factura:hover{
+    letter-spacing: 2px;
+    transition: .5s;
+}
+
+
+div.card {
+
+    border: 1px black solid;
+    border-radius: 0%;
+    text-align: center;
+    margin: auto;
+    
+}
+
+.card{
+  
+ 
+        border: 1px black solid;
+        border-radius: 0%;
+        text-align: center;
+
+    
+    
+}
+
+
+.imagecarrito {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+
+
+.agregar{
+    background-color: black;
+    color: white;
+}

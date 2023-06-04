@@ -1,0 +1,22 @@
+.primero{
+    background-color: black;
+    color: white;
+}
+
+.primero:hover{
+    letter-spacing: 2px;
+    transition: .5s;
+}
+
+.negocio{
+    width: 40%;
+height: 400px;
+object-fit: cover;
+margin: 80px;
+
+}
+
+.textoubi{
+    text-align: center;
+    justify-content: center;
+}

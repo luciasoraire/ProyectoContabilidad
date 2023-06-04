@@ -2,12 +2,15 @@
     width: 100%;
     display: flex;
     gap: 15px;
+    margin-top: 100px;
+    min-height: 41vh;
 }
 
 
 
+
 .container {
-    width: 700px;
+    width: 1000px;
    
     display: flex;
     height: fit-content;
@@ -15,21 +18,24 @@
 }
 
 .containerModel {
-    width: 600px;
+    width: 700px;
     display: flex;
     height: fit-content; 
+
 }
 
 .containerPorAsiento{
     display: flex;
     height: fit-content;
     flex-wrap: wrap;
+    
 }
 
 .all {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
+
 }
 
 .fecha {
@@ -48,8 +54,11 @@
 .info {
     border: 1px solid black;
     width: 50%;
+    margin: 30px;
 }
-
+.mas{
+    margin: 10px;
+}
 .info h2 {
     margin: 0;
     margin-top: 8px;
@@ -75,8 +84,10 @@
 }
 
 .button {
-    height: 50px;
+    height: 70px;
     margin: 15px;
+    background-color: black;
+    color: white;
 }
 
 .button:hover {
@@ -93,6 +104,7 @@
     display: flex;
     justify-content: center;
 }
+
 
 .numero {
     width: 30px;
@@ -152,11 +164,13 @@ button:hover {
     display: flex;
     justify-content: right;
     flex-direction: column; 
+    
 }
 
 .productoHaber2 p{
     margin-left: auto;
     margin-top: 0;
+    
 }
 
 
@@ -166,6 +180,7 @@ button:hover {
     margin-left: 15px;
     background-color: white;
     border-bottom: 1px solid rgb(205, 205, 205);
+    
 }
 
 .p {
@@ -174,6 +189,7 @@ button:hover {
 
 .pHaber {
     margin-right: 15px;
+    
 }
 
 .referencia {

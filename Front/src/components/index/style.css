@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@1,600&family=DM+Serif+Display&family=Merriweather&family=Playfair+Display:ital@0;1&family=Poppins&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Courier New', Courier, monospace
+    font-family: 'Playfair Display', serif;
+    
 }
-
 
 header{
     z-index: 2;
@@ -38,8 +40,19 @@ header .logo{
 
     
 }
+.texto1{
+  width: 1000px;
+text-align: justify;
 
-header ul{
+}
+
+video{
+  width: 100%;
+  object-fit: cover;
+  height: 550px;
+}
+header ul
+{
     position: relative;
     display: flex;
     justify-content: center;
@@ -83,10 +96,22 @@ header ul li a{
     
 }
 
+.carrito{
+  font-size: 26px;
+  color: black;
+  
+  margin: 50px;
+  padding-bottom: 10px;
+}
+.carrito:hover{
+  transform: scale(1.1);
+  color: black;
+}
+
 .videoFondo{
     width: 750px;
     position: absolute;
-    margin-top: 220px;
+    margin-top: 150px;
     padding: 50px;}
     
 li a.active {
@@ -100,7 +125,28 @@ li a:hover {
     transition: .5s;
     color: rgb(255, 255, 255);
 }
+button.btn.btn-primary{
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  letter-spacing: 2px;
+  font-weight: 500px;
+  transition: 0.6s;
+  background-color: white;
+  border: none;
+  margin: 10px;
+    padding: 0;
+}
 
+button.btn.btn-primary:hover{
+  background: #000000;
+    transition: .5s;
+    color: rgb(255, 255, 255);
+    border-radius: 0%;
+    margin: 10px;
+    padding: 0;
+}
 
 article{
     position: absolute;
@@ -111,7 +157,7 @@ article{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../../img/pexels-karolina-grabowska-4736087\ \(1\).jpg);
+    background: url(../../img/4.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -126,12 +172,12 @@ article .box{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../../img/pexels-karolina-grabowska-4736087\ \(1\).jpg);
+    background: url(../../img/4.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     overflow: hidden;
-
+    font-style: italic;
 }
 
 article .box:nth-child(1){
@@ -147,6 +193,7 @@ article .box h2{
     font-size: 10em;
     transform: translate(0,0);
     transform: translate(calc(var(--x)/25), calc(var(--y)/25));
+    font-style: italic;
 }
 
 .circle{
@@ -317,10 +364,41 @@ align-content: center;
 justify-content: center;
 
 }
+
+div.content-container1
+{
+  text-align: center;
+  margin-bottom: 100px;
+}
+div.columns1.content1{
+  width: 100%;
+margin: auto;}
+
+div.section-content1{
+  width: 100vh;
+}
 .section-container .columns
 {
 flex:0 0 auto;
 width:50%;
+}
+
+p.texto1{
+  text-align: center;
+  margin: auto;
+  width: 90%;
+}
+
+button{
+  border: none;
+}
+.salir{
+  border: none;
+}
+.salir:hover{
+  background-color: black;
+  color: white;
+  border-radius: 0%;
 }
 .section-container .columns.image
 {
@@ -332,6 +410,10 @@ background-size:cover;
 {
 padding:30px 50px;
 }
+main{
+  min-height: 100vh;
+}
+
 
 .section-container .columns.content .content-container h5
 {
@@ -345,7 +427,7 @@ font-weight:400;
 font-size:16px;
 margin-bottom:20px;
 margin-bottom:15px;
-text-align:justify;
+
 }
 
 
@@ -357,7 +439,10 @@ main.containerShop{
 {
     position: relative;
     display: flex;
-    width: 900px;
+
+    margin: auto;
+    margin-top: 30px;
+
     
     
 }
@@ -388,45 +473,40 @@ transform: translateY(-50%);
 .containerc .thumb li{
     list-style: none;
     width: 100px;
-    height: 100px;
-    margin: 10px 0;
+    height: 10px;
+    margin: 40px 0;
+    opacity:30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(255, 255, 255,0.2);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-top: 1px solid rgba(255,255,255,0.5);
-    border-left: 1px solid rgba(255,255,255,0.5);
-    backdrop-filter: blur(4px);
+
+
 
 }
 
 .containerc .thumb li img{
-    width: 90%;
+  height: 100px;
     transition: 0.5s;
 }
 
 .containerc .thumb li:hover img{
-    transform: rotate(-35deg)
+    transform: rotate(-15deg)
+    scale(1.5)
 }
 
 .containerc .imgBox{
     
     top: 0;
     right: 0;
-    width: 100%;
+    width: 80%;
     height: 100%;
-    background-color: #E59D23;
-    background: rgb(255, 255, 255,0.2);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-top: 1px solid rgba(255,255,255,0.5);
-    border-top: 1px solid rgba(255,255,255,0.5);
-    backdrop-filter: blur(4px);
+    background-color: white;
+margin: auto;
+
+
+
     padding: 0px 0px;
-    
-    padding-left: 100px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -435,13 +515,11 @@ transform: translateY(-50%);
 }
 
 
-.containerc .imgBox h2{
-    color: rgb(0, 0, 0);
-    letter-spacing: 1;
-}
+
 .containerc .imgBox img{
-    width: 90%;
+    width:40%;
     transition: 0.25s;
+    margin-top: 150px;
 }
 
 .containerc .imgBox img:hover{
@@ -452,10 +530,15 @@ transform: translateY(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-right: 80px;
+    
 }
 
+
 .containerc .imgBox .size span{
-color: #000000;
+color: #ffffff;
 font-size: 1.2em;
 letter-spacing: 1px;
 margin-right: 5px;
@@ -486,23 +569,23 @@ transition: 0.25s;
 .containerc .imgBox .btn{
     position: absolute;
     bottom: -30px;
-    background: #fff;
+    background: black;
     display: inline-block;
     text-decoration: none;
-    padding: 15px 30px;
+
     box-shadow: 0 15px 35px rgba(0,0, 0, 0.1);
     font-weight: 500;
-    color: #000000;
+    color: white;
     transition: 0.25s;
+    border-radius: 0%;
 }
 
 .containerc .imgBox .btn:hover{
     letter-spacing: 2px;
+    background-color: grey;
 }
 
-#primercontainer{
-    margin-top: 53em;
-}
+
 
 
 
@@ -647,7 +730,23 @@ section#articleCarrito.mt-4 {
     text-align: center;
   }
   .proximamente{
-    margin-top: 100px;
+
+    font-style: italic;
+
+  }
+.proximamenteusual{
+  font-weight: 700;
+  font-size: 25px;
+  font-style: italic;
+
+  margin-bottom: 30px;
+}
+  .proximamente1{
+    font-weight: 700;
+    font-size: 25px;
+    font-style: italic;
+    margin-top:50px;
+    margin-bottom: 30px;
   }
   .card-img-top-carro {
     max-width: 80px;
@@ -749,6 +848,38 @@ button.mb-2:hover{
   }
 
 
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.bienvenido{
+  text-align: center;
+}
+
+.yatienecuenta{
+  text-align: center;
+}
+
+div.bienvenido.modal-body{
+ margin: auto;
+}
+
+div.headerform.modal-header{
+  margin: auto;
+}
+div.formLogin{
+  display: flex;
+  flex-direction: column;
+}
+
+.iniciar{
+  margin-top: 30px;
+}
+.contrasena{
+  margin-top: 10px;
+}
   @keyframes slide {
     from {
       transform: translate(0, 0);

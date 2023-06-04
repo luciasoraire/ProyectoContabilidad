@@ -9,6 +9,8 @@ import Select from './components/selectFactura/Select';
 import Asientos from './components/asientos/Asientos';
 import CreateProduct from './components/createProduct/CreateProduct';
 import Index from './components/index/Index';
+import Nosotros from './components/nosotros/Nosotros';
+import Novedades from './components/novedades/Novedades';
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
           <Route path="/select" element={<Select />} />
           <Route path="/asientos" element={<Asientos />} />
           <Route path="/createProduct" element={<CreateProduct />}/>
+          <Route path="/nosotros" element={<Nosotros />}/>
+          <Route path="/novedades" element={<Novedades />}/>
         </Routes>
     </div>
   );
