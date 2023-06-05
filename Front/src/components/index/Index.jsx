@@ -86,7 +86,7 @@ function App() {
 }
 
 const cerrarSesion = () => {
-    const currentUserJSON = JSON.stringify(usuario);
+    const currentUserJSON = JSON.stringify(user);
     localStorage.setItem('usuario', currentUserJSON);
 }
 const currentUserJSON = localStorage.getItem('usuario');

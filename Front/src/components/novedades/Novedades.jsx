@@ -39,58 +39,58 @@ function Novedades() {
   const navigate = useNavigate()
   const [access, setAccess] = useState(false)
   const [usuario, setUsuario] = useState({
-      correo: "",
-      contraseña: ""
+    correo: "",
+    contraseña: ""
   })
 
   useEffect(() => {
 
-      const crearLocalStorage = () => {
-          const object = {
-              factura: '',
-              cliente: {},
-              compras: []
-          };
-
-          const miArrayString = JSON.stringify(object);
-
-          // Almaceno el array en el localstorage
-          localStorage.setItem('carrito', miArrayString);
+    const crearLocalStorage = () => {
+      const object = {
+        factura: '',
+        cliente: {},
+        compras: []
       };
 
-      // Verifica si el localStorage ya existe
-      if (!localStorage.getItem('carrito')) {
-          crearLocalStorage();
-      }
+      const miArrayString = JSON.stringify(object);
+
+      // Almaceno el array en el localstorage
+      localStorage.setItem('carrito', miArrayString);
+    };
+
+    // Verifica si el localStorage ya existe
+    if (!localStorage.getItem('carrito')) {
+      crearLocalStorage();
+    }
   }, [])
 
   const onChangeHandler = (event) => {
-      setUsuario({
-          ...usuario,
-          [event.target.name]: event.target.value
-      })
+    setUsuario({
+      ...usuario,
+      [event.target.name]: event.target.value
+    })
   }
   const saveUser = () => {
-      if (usuario.correo && usuario.contraseña) {
-          setAccess(true)
+    if (usuario.correo && usuario.contraseña) {
+      setAccess(true)
 
-          const currentUserJSON = JSON.stringify(usuario);
-          localStorage.setItem('usuario', currentUserJSON);
-          
-          navigate('/products')
-      }
+      const currentUserJSON = JSON.stringify(usuario);
+      localStorage.setItem('usuario', currentUserJSON);
+
+      navigate('/products')
+    }
   }
   const user = {
     correo: "",
     contraseña: ""
-}
+  }
 
-const cerrarSesion = () => {
+  const cerrarSesion = () => {
     const currentUserJSON = JSON.stringify(usuario);
     localStorage.setItem('usuario', currentUserJSON);
-}
-const currentUserJSON = localStorage.getItem('usuario');
-const currentUser = JSON.parse(currentUserJSON);
+  }
+  const currentUserJSON = localStorage.getItem('usuario');
+  const currentUser = JSON.parse(currentUserJSON);
 
 
   return (
@@ -98,7 +98,7 @@ const currentUser = JSON.parse(currentUserJSON);
 
     <div>
       <header>
-      <div className="row">
+        <div className="row">
           <div className="square slide">
             <img className="logo square rotate" src={Logo} alt="" />
           </div>
@@ -106,19 +106,19 @@ const currentUser = JSON.parse(currentUserJSON);
         <ul>
           <li><a href="http://localhost:3000">Inicio</a></li>
           <li><a href="http://localhost:3000/products">Shop</a></li>
-      
-          
+
+
           <li><a href="http://localhost:3000/nosotros" >Nosotros</a></li>
           <li><a href="http://localhost:3000/novedades" className="active">New Arrivals</a></li>
-          {currentUser.correo === "admin@gmail.com" &&<li><a href="http://localhost:3000/asientos">Asientos</a></li>}
+          {currentUser.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/asientos">Asientos</a></li>}
 
-          {currentUser.correo === "admin@gmail.com" &&<li><a href="http://localhost:3000/createProduct">Crear producto</a></li>}
-         
-          <li className="nav-item" id="navLogin">
+          {currentUser.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/createProduct">Crear producto</a></li>}
+
+          {currentUserJSON.correo && <li className="nav-item" id="navLogin">
             <Button variant="primary" onClick={handleShow}>
               Iniciar sesión
             </Button>
-          </li>
+          </li>}
           <li className="nav-item" id="navAdmin"></li>
           <a href="http://localhost:3000/carrito" className='carrito'><BsCart4 /> </a>
           <a href='http://localhost:3000/'><button onClick={cerrarSesion} className='salir'>Salir</button></a>
@@ -127,7 +127,7 @@ const currentUser = JSON.parse(currentUserJSON);
 
       <div className='videoaparato'>
         <video src={Video} autoPlay loop ></video>
-        </div>
+      </div>
       <div className="section-container1">
         <div className="columns1 content1">
           <div className="content-container1">
@@ -135,32 +135,32 @@ const currentUser = JSON.parse(currentUserJSON);
             <p className="texto1">
               REEF ofrece un nuevo modelo de lente flexible en 5 diferentes tonos; blanco, gris, verde, bordó y celeste.
               Podes encargarlos para sol o graduados, estos han sido desarrollados para proteger los ojos de los efectos nocivos y desagradables de los rayos solares.
-Ofreciendo protección UV de acuerdo con las principales Normas Internacionales. Las lentes Reef de sol absorben el 100% de los rayos ultravioletas, poseen una alta calidad optica y son resistentes a los impactos. 
+              Ofreciendo protección UV de acuerdo con las principales Normas Internacionales. Las lentes Reef de sol absorben el 100% de los rayos ultravioletas, poseen una alta calidad optica y son resistentes a los impactos.
               Estos marcos son 100% resistentes y flexibles, realizados con material inalterable, termodormable y colores
               perdurables con el tiempo.
-       
- 
+
+
               Los anteojos vienen en talle S, M y L. Las medidas del talle S son de 49 a 52 mm, las del M se encuentran entre
               53 a 56 mm y los mas grandes de 57 a 59 mm, esto quiere decir que pueden usarlos tanto niños como adultos.
-        <br></br>
-        <br></br>
+              <br></br>
+              <br></br>
               El armazón no incluye el lente, por lo que al hacer tu compra de forma presencial debes traer la receta con la
               graduación para realizarte un presupuesto.
-    
+
               Puedes agregarle cristales unifocales o monofocales, de relax, bifocales, progresivos o multifocales,
               ocupacionales. Y eso no es todo ¿Querés saber la mejor parte? Podes agregarle lentes polarizados en una amplia
               variedad de tonos degradados todos estos contienen un filtro especial que
               bloquea la luz reflejada y sólo deja pasar la luz útil, permitiendo una visión sin reflejos y con un color y
               contraste naturales.
-              
+
             </p>
             <br />
             <button className='primero'>Ver más</button>
-            
+
           </div>
           <hr></hr>
         </div>
-        
+
         <div className="columns image">
           <div className="containerc">
             <ul className="thumb">
@@ -171,7 +171,7 @@ Ofreciendo protección UV de acuerdo con las principales Normas Internacionales.
               <li onMouseOver={() => changeImageSrc(Armazon5)}><img src={Armazon5} alt="" /></li>
             </ul>
             <div className="imgBox">
-              
+
               <img src={Armazon1} className="anteojos" alt="" />
               <ul className="size">
                 <span>Size</span>
@@ -179,7 +179,7 @@ Ofreciendo protección UV de acuerdo con las principales Normas Internacionales.
                 <li>M</li>
                 <li>L</li>
               </ul>
-              
+
             </div>
           </div>
         </div>
@@ -191,11 +191,11 @@ Ofreciendo protección UV de acuerdo con las principales Normas Internacionales.
 
       <footer className="bg-white">
         <div className="container py-5">
-          
+
           <div className="row py-4">
-            
+
             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-            <h6 className="text-uppercase font-weight-bold mb-4">Nosotros</h6>
+              <h6 className="text-uppercase font-weight-bold mb-4">Nosotros</h6>
               <p className="font-italic text-muted">Optique es la óptica y boutique de lentes más reconocida del país. Contamos con una gran variedad de armazones recetados y lentes de contacto. Especialista en Multifocales y altas graduaciones.</p>
               <ul className="list-inline mt-4">
                 <li className="list-inline-item"><a href="#" target="_blank" title="github"><i className="bi bi-github"></i></a></li>
@@ -254,15 +254,15 @@ Ofreciendo protección UV de acuerdo con las principales Normas Internacionales.
         <Modal.Body className='bienvenido'>
           <div className="form">
             <div className="formLogin">
-                <input className='correo' type="text" name="correo" placeholder="Correo" onChange={onChangeHandler} value={usuario.correo} />
-                <input className='contrasena' type="text" name="contraseña" placeholder="Contraseña" onChange={onChangeHandler} value={usuario.contraseña} />
-                <button onClick={saveUser} className='iniciar'>Ingresar</button>
+              <input className='correo' type="text" name="correo" placeholder="Correo" onChange={onChangeHandler} value={usuario.correo} />
+              <input className='contrasena' type="text" name="contraseña" placeholder="Contraseña" onChange={onChangeHandler} value={usuario.contraseña} />
+              <button onClick={saveUser} className='iniciar'>Ingresar</button>
             </div>
-        </div>
+          </div>
         </Modal.Body>
         <Modal.Footer>
 
-        
+
         </Modal.Footer>
       </Modal>
     </div>

@@ -86,10 +86,10 @@ const Select = () => {
         </ul>
       </header>
             <div className="secondContainer">
-                <div className={style.containerButtons}>
-                    <button name="RI" onClick={onClickHandler}>Responsable Inscripto</button>
-                    <button name="MO" onClick={onClickHandler}>Monotributista</button>
-                    <button name="CO" onClick={onClickHandler}>Consumir Final</button>
+                <div className="containerCliente">
+                    <button className='buttonsDiv' name="RI" onClick={onClickHandler}>Responsable Inscripto</button>
+                    <button className='buttonsDiv' name="MO" onClick={onClickHandler}>Monotributista</button>
+                    <button className='buttonsDiv' name="CO" onClick={onClickHandler}>Consumir Final</button>
                 </div>
                 <div className="containerCliente">
                     <div>

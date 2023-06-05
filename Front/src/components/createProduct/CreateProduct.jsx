@@ -7,46 +7,46 @@ import { BsCart4 } from "react-icons/bs";
 import Logo from '../../img/logonegrosinf.png'
 
 const CreateProduct = () => {
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-  
-    const [product, setProduct] = useState({
-        name: '',
-        image: '',
-        precio: 0,
-        stock: 0
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [product, setProduct] = useState({
+    name: '',
+    image: '',
+    precio: 0,
+    stock: 0
+  })
+
+  const onChangeHandler = (e) => {
+    setProduct({
+      ...product,
+      [e.target.name]: e.target.value
     })
-
-    const onChangeHandler = (e) => {
-        setProduct({
-            ...product,
-            [e.target.name]: e.target.value
-        })
-    }
+  }
 
 
-    const createProductHandler = async(e) => {
-        e.preventDefault()
-        const newProduct = await axios.post('http://localhost:3001/contabilidad', product)
-        console.log(newProduct);
-    }
-    const usuario = {
-        correo: "",
-        contraseña: ""
-    }
-    
-    const cerrarSesion = () => {
-        const currentUserJSON = JSON.stringify(usuario);
-        localStorage.setItem('usuario', currentUserJSON);
-    }
-    const currentUserJSON = localStorage.getItem('usuario');
-    const currentUser = JSON.parse(currentUserJSON);
+  const createProductHandler = async (e) => {
+    e.preventDefault()
+    const newProduct = await axios.post('http://localhost:3001/contabilidad', product)
+    console.log(newProduct);
+  }
+  const usuario = {
+    correo: "",
+    contraseña: ""
+  }
 
-    return (
-        <div>
-        <header>
+  const cerrarSesion = () => {
+    const currentUserJSON = JSON.stringify(usuario);
+    localStorage.setItem('usuario', currentUserJSON);
+  }
+  const currentUserJSON = localStorage.getItem('usuario');
+  const currentUser = JSON.parse(currentUserJSON);
+
+  return (
+    <div>
+      <header>
         <div className="row">
           <div className="square slide">
             <img className="logo square rotate" src={Logo} alt="" />
@@ -55,48 +55,48 @@ const CreateProduct = () => {
         <ul>
           <li><a href="http://localhost:3000" >Inicio</a></li>
           <li><a href="http://localhost:3000/products">Shop</a></li>
-      
-          
+
+
           <li><a href="http://localhost:3000/nosotros">Nosotros</a></li>
           <li><a href="http://localhost:3000/novedades">New Arrivals</a></li>
-          {currentUser.correo === "admin@gmail.com" &&<li><a href="http://localhost:3000/asientos" >Asientos</a></li>}
+          {currentUser.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/asientos" >Asientos</a></li>}
 
-          {currentUser.correo === "admin@gmail.com" &&<li><a href="http://localhost:3000/createProduct" className="active">Crear producto</a></li>}
-         
-          <li className="nav-item" id="navLogin">
+          {currentUser.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/createProduct" className="active">Crear producto</a></li>}
+
+          {currentUserJSON.correo && <li className="nav-item" id="navLogin">
             <Button variant="primary" onClick={handleShow}>
               Iniciar sesión
             </Button>
-          </li>
+          </li>}
           <li className="nav-item" id="navAdmin"></li>
           <a href="http://localhost:3000/carrito" className='carrito'><BsCart4 /> </a>
           <a href='http://localhost:3000/'><button onClick={cerrarSesion} className='salir'>Salir</button></a>
         </ul>
       </header>
-      
-        <div className="container">
-            
-            <div className="secondContainer">
-                <form onSubmit={createProductHandler}>
-                    <label htmlFor="">Nombre</label>
-                    <input type="text" name="name" onChange={onChangeHandler} value={product.name} required/>
-                    <label htmlFor="">Imagen</label>
-                    <input type="text" name="image" onChange={onChangeHandler} value={product.image} required/>
-                    <label htmlFor="">Precio</label>
-                    <input type="number" name="precio" onChange={onChangeHandler} value={product.precio} required/>
-                    <label htmlFor="">Stock</label>
-                    <input type="number" name="stock" onChange={onChangeHandler} value={product.stock} required/>
-                    <button type="submit" className="crear">Crear</button>
-                </form>
-            </div>
+
+      <div className="container">
+
+        <div className="secondContainer">
+          <form onSubmit={createProductHandler}>
+            <label htmlFor="">Nombre</label>
+            <input type="text" name="name" onChange={onChangeHandler} value={product.name} required />
+            <label htmlFor="">Imagen</label>
+            <input type="text" name="image" onChange={onChangeHandler} value={product.image} required />
+            <label htmlFor="">Precio</label>
+            <input type="number" name="precio" onChange={onChangeHandler} value={product.precio} required />
+            <label htmlFor="">Stock</label>
+            <input type="number" name="stock" onChange={onChangeHandler} value={product.stock} required />
+            <button type="submit" className="crear">Crear</button>
+          </form>
         </div>
-        <footer className="bg-white">
+      </div>
+      <footer className="bg-white">
         <div className="container py-5">
-          
+
           <div className="row py-4">
-            
+
             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-            <h6 className="text-uppercase font-weight-bold mb-4">Nosotros</h6>
+              <h6 className="text-uppercase font-weight-bold mb-4">Nosotros</h6>
               <p className="font-italic text-muted">Optique es la óptica y boutique de lentes más reconocida del país. Contamos con una gran variedad de armazones recetados y lentes de contacto. Especialista en Multifocales y altas graduaciones.</p>
               <ul className="list-inline mt-4">
                 <li className="list-inline-item"><a href="#" target="_blank" title="github"><i className="bi bi-github"></i></a></li>
@@ -147,9 +147,9 @@ const CreateProduct = () => {
           </div>
         </div>
       </footer>
-        </div>
-        
-    )
+    </div>
+
+  )
 }
 
 export default CreateProduct

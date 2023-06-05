@@ -3,6 +3,10 @@
     min-height: 30vh;
 }
 
+.buttonsDiv {
+    width: 200px;
+}
+
 .containerButtons {
 
     display: flex;
