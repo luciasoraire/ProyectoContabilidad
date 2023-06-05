@@ -10,27 +10,6 @@ const Login = () => {
         contraseña: ""
     })
 
-    useEffect(() => {
-
-        const crearLocalStorage = () => {
-            const object = {
-                factura: '',
-                cliente: {},
-                compras: []
-            };
-
-            const miArrayString = JSON.stringify(object);
-
-            // Almaceno el array en el localstorage
-            localStorage.setItem('carrito', miArrayString);
-        };
-
-        // Verifica si el localStorage ya existe
-        if (!localStorage.getItem('carrito')) {
-            crearLocalStorage();
-        }
-    }, [])
-
     const onChangeHandler = (event) => {
         setUsuario({
             ...usuario,

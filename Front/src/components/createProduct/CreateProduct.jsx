@@ -59,18 +59,18 @@ const CreateProduct = () => {
 
           <li><a href="http://localhost:3000/nosotros">Nosotros</a></li>
           <li><a href="http://localhost:3000/novedades">New Arrivals</a></li>
-          {currentUser.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/asientos" >Asientos</a></li>}
+          {currentUser?.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/asientos" >Asientos</a></li>}
 
-          {currentUser.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/createProduct" className="active">Crear producto</a></li>}
+          {currentUser?.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/createProduct" className="active">Crear producto</a></li>}
 
-          {currentUserJSON.correo && <li className="nav-item" id="navLogin">
+          {currentUserJSON?.correo && <li className="nav-item" id="navLogin">
             <Button variant="primary" onClick={handleShow}>
               Iniciar sesión
             </Button>
           </li>}
           <li className="nav-item" id="navAdmin"></li>
           <a href="http://localhost:3000/carrito" className='carrito'><BsCart4 /> </a>
-          <a href='http://localhost:3000/'><button onClick={cerrarSesion} className='salir'>Salir</button></a>
+          {currentUser?.correo && <a href='http://localhost:3000/'><button onClick={cerrarSesion} className='salir'>Salir</button></a>}
         </ul>
       </header>
 
