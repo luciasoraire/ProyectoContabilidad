@@ -86,7 +86,7 @@ const responsableInscripto = async (req, res, productosParaPDF, cliente) => {
         <h2 class="factura">Factura A</h2>
         <div class="container">
           <div class="left">
-            <h3>MARCA</h3>
+            <h3>Optique</h3>
             <p>San Martin 145 - San Miguel de Tucuman</p>
             <p>marca@gmail.com</p>
             <p><span class="label">Tel:</span>3813545337</p>

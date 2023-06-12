@@ -12,7 +12,7 @@ app.use(cors())
 app.use(morgan('dev'))
 
 app.use('/contabilidad', router)
-sequelize.sync({force: true}).then(() => {
+sequelize.sync({alter: true}).then(() => {
     app.listen(3001, () => {
         console.log('server on port 3001');
     })
