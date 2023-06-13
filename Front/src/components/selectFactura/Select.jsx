@@ -161,7 +161,7 @@ const Select = () => {
 
         <div className="bg-light py-4">
           <div className="containerf text-center">
-            <p className="text-muted mb-0 py-2">© 2022 | Todos los derechos reservados.</p>
+            <p className="text-muted mb-0 py-2">© 2023 | Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
