@@ -89,7 +89,7 @@ const Select = () => {
                 <div className="containerCliente">
                     <button className='buttonsDiv' name="RI" onClick={onClickHandler}>Responsable Inscripto</button>
                     <button className='buttonsDiv' name="MO" onClick={onClickHandler}>Monotributista</button>
-                    <button className='buttonsDiv' name="CO" onClick={onClickHandler}>Consumir Final</button>
+                    <button className='buttonsDiv' name="CO" onClick={onClickHandler}>Consumidor Final</button>
                 </div>
                 <div className="containerCliente">
                     <div>
