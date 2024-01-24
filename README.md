@@ -18,7 +18,7 @@
 
 #### Estructura general del sitio
 
-1. [Tienda:](https://optiquecontabilidad.netlify.app/products) esta página mostrará los productos previamente cargados por el administrador desde la página [crear producto](https://optiquecontabilidad.netlify.app/createProduct).
+1. [Tienda:](https://optiquecontabilidad.netlify.app/products) esta página mostrará los productos que han sido previamente cargados por el administrador mediante la funcionalidad proporcionada en [crear producto](https://optiquecontabilidad.netlify.app/createProduct).
 
 1. [Página de Asientos:](https://optiquecontabilidad.netlify.app/asientos) acá se te brinda la capacidad de registrar todos los asientos contables. Tendrás la posibilidad de ingresar la información correspondiente a los importes de debe y haber, junto con detalles adicionales como la referencia y la fecha asociada a cada asiento. La interfaz está diseñada de tal manera que facilita la organización y alineación precisa de estos registros, presentándolos de manera clara y ordenada, uno debajo del otro.
 
