@@ -67,12 +67,12 @@ const Products = () => {
           </div>
         </div>
         <ul>
-          <li><a href="http://localhost:3000" >Inicio</a></li>
-          <li><a href="http://localhost:3000/products" className="active">Shop</a></li>
+          <li><a href="/" >Inicio</a></li>
+          <li><a href="/products" className="active">Shop</a></li>
 
 
-          <li><a href="http://localhost:3000/nosotros">Nosotros</a></li>
-          <li><a href="http://localhost:3000/novedades">New Arrivals</a></li>
+          <li><a href="/nosotros">Nosotros</a></li>
+          <li><a href="/novedades">New Arrivals</a></li>
           {currentUserJSON?.correo &&  <li className="nav-item" id="navLogin">
             <Button variant="primary" onClick={handleShow}>
               Iniciar sesión
@@ -80,13 +80,13 @@ const Products = () => {
           </li>}
 
 
-          {currentUser?.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/asientos">Asientos</a></li>}
-          {currentUser?.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/createProduct">Crear producto</a></li>}
+          {currentUser?.correo === "admin@gmail.com" && <li><a href="/asientos">Asientos</a></li>}
+          {currentUser?.correo === "admin@gmail.com" && <li><a href="/createProduct">Crear producto</a></li>}
 
 
           <li className="nav-item" id="navAdmin"></li>
-          <a href="http://localhost:3000/carrito" className='carrito'><BsCart4 /> </a>
-          {currentUser?.correo && <a href='http://localhost:3000/'><button onClick={cerrarSesion} className='salir'>Salir</button></a>}
+          <a href="/carrito" className='carrito'><BsCart4 /> </a>
+          {currentUser?.correo && <a href='/'><button onClick={cerrarSesion} className='salir'>Salir</button></a>}
 
           <li className="nav-item" id="navAdmin"></li>
 

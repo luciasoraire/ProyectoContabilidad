@@ -106,15 +106,15 @@ function App() {
           </div>
         </div>
         <ul>
-          <li><a href="http://localhost:3000" className="active">Inicio</a></li>
-          <li><a href="http://localhost:3000/products">Shop</a></li>
+          <li><a href="/" className="active">Inicio</a></li>
+          <li><a href="/products">Shop</a></li>
 
 
-          <li><a href="http://localhost:3000/nosotros">Nosotros</a></li>
-          <li><a href="http://localhost:3000/novedades">New Arrivals</a></li>
-          {currentUser?.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/asientos">Asientos</a></li>}
+          <li><a href="/nosotros">Nosotros</a></li>
+          <li><a href="/novedades">New Arrivals</a></li>
+          {currentUser?.correo === "admin@gmail.com" && <li><a href="/asientos">Asientos</a></li>}
 
-          {currentUser?.correo === "admin@gmail.com" && <li><a href="http://localhost:3000/createProduct">Crear producto</a></li>}
+          {currentUser?.correo === "admin@gmail.com" && <li><a href="/createProduct">Crear producto</a></li>}
 
           <li className="nav-item" id="navLogin">
             <Button variant="primary" onClick={handleShow}>
@@ -122,8 +122,8 @@ function App() {
             </Button>
           </li>
           <li className="nav-item" id="navAdmin"></li>
-          <a href="http://localhost:3000/carrito" className='carrito'><BsCart4 /> </a>
-          {currentUser?.correo && <a href='http://localhost:3000/'><button onClick={cerrarSesion} className='salir'>Salir</button></a>}
+          <a href="/carrito" className='carrito'><BsCart4 /> </a>
+          {currentUser?.correo && <a href='/'><button onClick={cerrarSesion} className='salir'>Salir</button></a>}
         </ul>
       </header>
 
