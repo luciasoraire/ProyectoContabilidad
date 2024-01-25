@@ -33,7 +33,7 @@ const Login = () => {
         <div className={style.container}>
             <div className={style.containerLogin}>
                 <input type="text" name="correo" placeholder="Correo" onChange={onChangeHandler} value={usuario.correo} />
-                <input type="text" name="contraseña" placeholder="Contraseña" onChange={onChangeHandler} value={usuario.contraseña} />
+                <input type="password" name="contraseña" placeholder="Contraseña" onChange={onChangeHandler} value={usuario.contraseña} />
                 <button onClick={saveUser}>LOGIN</button>
             </div>
         </div>

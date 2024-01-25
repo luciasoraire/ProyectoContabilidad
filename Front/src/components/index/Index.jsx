@@ -220,7 +220,7 @@ function App() {
           <div className="form">
             <div className="formLogin">
               <input className='correo' type="text" name="correo" placeholder="Correo" onChange={onChangeHandler} value={usuario.correo} />
-              <input className='contrasena' type="text" name="contraseña" placeholder="Contraseña" onChange={onChangeHandler} value={usuario.contraseña} />
+              <input className='contrasena' type="password" name="contraseña" placeholder="Contraseña" onChange={onChangeHandler} value={usuario.contraseña} />
               <button onClick={saveUser} className='iniciar'>Ingresar</button>
             </div>
           </div>
