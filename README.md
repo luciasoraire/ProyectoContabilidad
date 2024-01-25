@@ -9,7 +9,7 @@
 >*Optique es una empresa argentina especializada en la comercialización de lentes para visión y de sol, además de brindar servicios ópticos. Su denominación surge de la combinación de "óptica" y "boutique".*
 <br>
 
-> *Accedé a la demo del proyecto [aquí](https://optiquecontabilidad.netlify.app)*
+> *Accedé a la demo del proyecto [aquí.](https://optiquecontabilidad.netlify.app)*
 > 
 
 <br>
@@ -46,7 +46,7 @@ Una vez completados estos detalles, al hacer clic, se generará una nueva pesta�
 <br>
 
 ### Pasos para probar este proyecto
-*Utiliza los siguientes comandos para descargar una copia del proyecto*
+*Utiliza los siguientes comandos para descargar una copia del proyecto:*
 1. Crea una carpeta
 1. Abre Git Bash
 1. Coloca:  `git clone https://github.com/luciasoraire/ProyectoContabilidad`
@@ -64,7 +64,7 @@ Una vez completados estos detalles, al hacer clic, se generará una nueva pesta�
 <br>
 
 ### Pruebe nuestra pagina
-*Les dejamos una serie de productos para que usted mismo agregue. (Recuerde loguearse como administrador)*
+*Les dejamos una serie de productos para que usted mismo agregue. (Recuerde loguearse como administrador).*
 1. Nombre: Renoir
 1. Imagen: https://es.twigstore.com/cdn/shop/products/BNB02_1.png?v=1679323697&width=400
 1. Precio: 58500
