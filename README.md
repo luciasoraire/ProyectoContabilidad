@@ -48,12 +48,14 @@ Una vez completados estos detalles, al hacer clic, se generará una nueva pesta�
 ### Pasos para probar este proyecto
 *Utiliza los siguientes comandos para descargar una copia del proyecto:*
 1. Crea una carpeta
-1. Abre Git Bash
+1. Dentro de la misma carpeta, haz clic derecho y selecciona "Abrir con" y elige "Git Bash".
 1. Coloca:  `git clone https://github.com/luciasoraire/ProyectoContabilidad`
+1. En PostgreSQL crea una base de datos con el nombre "contablidad".
+1. Abre SQLShell y presiona Enter hasta que solicite la contraseña de PostgreSQL. 
 1. Una vez que hayas abierto el código en Visual Studio Code, realiza clic derecho en la carpeta denominada "Front". En la terminal, introduce el comando `npm install` para instalar las dependencias necesarias. Posteriormente, ejecuta el comando `npm start` para iniciar la aplicación.
 1. Asegúrate de seguir el mismo procedimiento para la carpeta "Back". 
 
-*Verifica que tengas instalados PostgreSQL y SQLShell, y edita la contraseña en el archivo .env con la tuya.*
+*Recuerda editar la contraseña del archivo .env con la tuya.*
 
 <br>
 
