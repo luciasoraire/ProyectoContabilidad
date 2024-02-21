@@ -76,4 +76,4 @@ Una vez completados estos detalles, al hacer clic, se generará una nueva pesta�
 
 ### Autores
 - [Mariano Torres](https://github.com/MarianoiTorres)
-- [Soraire Lucía](https://github.com/luciasoraire)
+- [Lucía Soraire](https://github.com/luciasoraire)
